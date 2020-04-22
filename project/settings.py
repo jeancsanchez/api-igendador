@@ -19,8 +19,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'location',
     'establishment',
+    'daybook',
+    'location',
+    'event',
 ]
 
 MIDDLEWARE = [

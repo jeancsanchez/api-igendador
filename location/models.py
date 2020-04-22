@@ -1,6 +1,8 @@
 from django.db import models
 from unidecode import unidecode
 
+from establishment.models import Establishment
+
 
 class Location(models.Model):
     latitude = models.FloatField(null=True, default=0)
@@ -12,6 +14,7 @@ class Location(models.Model):
     neighborhood = models.CharField(null=True, blank=True, max_length=150)
     street = models.CharField(null=True, blank=True, max_length=150)
     number = models.CharField(null=True, blank=True, max_length=10)
+    establishment = models.ForeignKey(to=Establishment, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         address = ''
