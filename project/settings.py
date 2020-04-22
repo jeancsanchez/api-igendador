@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'daybook',
     'location',
     'event',
+    'user',
 ]
 
 MIDDLEWARE = [
