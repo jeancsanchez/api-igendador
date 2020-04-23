@@ -14,7 +14,7 @@ class Location(models.Model):
     neighborhood = models.CharField(null=True, blank=True, max_length=150)
     street = models.CharField(null=True, blank=True, max_length=150)
     number = models.CharField(null=True, blank=True, max_length=10)
-    establishment = models.ForeignKey(to=Establishment, on_delete=models.DO_NOTHING)
+    establishment = models.ForeignKey(to=Establishment, related_name='locations', on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = 'tb_location'

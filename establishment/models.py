@@ -5,8 +5,6 @@ class Establishment(models.Model):
     title = models.CharField(max_length=255, blank=False, null=False, unique=True)
     subtitle = models.CharField(max_length=255, blank=True, null=True)
     stars = models.FloatField(default=0)
-    lat = models.FloatField(null=True)
-    long = models.FloatField(null=True)
 
     class Meta:
         db_table = 'tb_establishment'
