@@ -16,6 +16,9 @@ class Location(models.Model):
     number = models.CharField(null=True, blank=True, max_length=10)
     establishment = models.ForeignKey(to=Establishment, on_delete=models.DO_NOTHING)
 
+    class Meta:
+        db_table = 'tb_location'
+
     def __str__(self):
         address = ''
 

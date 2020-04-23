@@ -40,7 +40,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now)
     objects = CustomUserManager()
 
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', ]
+
+    class Meta:
+        db_table = 'tb_user'
+
     def __str__(self):
         return self.name + ' (' + self.email + ')'
-
-    REQUIRED_FIELDS = ['name', 'email']

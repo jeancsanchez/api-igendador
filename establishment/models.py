@@ -8,7 +8,13 @@ class Establishment(models.Model):
     lat = models.FloatField(null=True)
     long = models.FloatField(null=True)
 
+    class Meta:
+        db_table = 'tb_establishment'
+
 
 class Photo(models.Model):
     path = models.CharField(max_length=300, blank=False, unique=True)
     establishment = models.ForeignKey(to=Establishment, null=True, blank=False, on_delete=models.DO_NOTHING)
+
+    class Meta:
+        db_table = 'tb_photo'
