@@ -9,6 +9,9 @@ class Establishment(models.Model):
     class Meta:
         db_table = 'tb_establishment'
 
+    def __str__(self):
+        return self.title
+
 
 class Photo(models.Model):
     path = models.CharField(max_length=300, blank=False, unique=True)
