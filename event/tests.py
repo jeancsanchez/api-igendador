@@ -4,7 +4,6 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 
 from daybook.models import DayBook
-from daybook.serializers import DayBookSerializer
 from establishment.models import Establishment
 
 
