@@ -14,7 +14,7 @@ class Event(models.Model):
         db_table = 'tb_event'
 
     def __str__(self):
-        return self.day_book.establishment.title + ' - ' + self.description
+        return self.day_book.__str__() + ' | ' + self.description + ' | ' + self.user.name
 
     def save(self, *args, **kwargs):
         if Event.objects.filter(day_book=self.day_book, hour=self.hour).exists():

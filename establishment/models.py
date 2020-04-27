@@ -1,9 +1,12 @@
 from django.db import models
 
+from user.models import User
+
 
 class Establishment(models.Model):
     title = models.CharField(max_length=255, blank=False, null=False, unique=True)
     subtitle = models.CharField(max_length=255, blank=True, null=True)
+    owner = models.ForeignKey(to=User, on_delete=models.PROTECT)
     stars = models.FloatField(default=0)
 
     class Meta:

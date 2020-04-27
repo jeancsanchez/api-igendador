@@ -10,6 +10,7 @@ class DayBook(models.Model):
 
     class Meta:
         db_table = 'tb_day_book'
+        ordering = ('date',)
 
     def __str__(self):
-        return self.date.strftime('%b/%d/%Y %H:%M:%S')
+        return self.establishment.title + ' | ' + self.date.strftime('%d/%m/%Y | %H:%M')
