@@ -11,5 +11,3 @@ env/
 static/
 testing/tests/pics/
 pics/
-
-*.json

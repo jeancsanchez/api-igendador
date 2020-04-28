@@ -1,0 +1,82 @@
+[
+{
+  "model": "user.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$5c9KGLxzGsHv$o8sdAgx2mwQqBn2H7BiAdr8WynTjcUlFoPWSgTfnWhc=",
+    "last_login": "2020-04-28T00:56:50Z",
+    "is_superuser": true,
+    "email": "jean@jean.com.br",
+    "name": "Jean",
+    "age": 19,
+    "photo": null,
+    "is_google_user": false,
+    "new_password": null,
+    "is_active": true,
+    "is_staff": true,
+    "date_joined": "2020-04-28T00:56:37Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "user.user",
+  "pk": 2,
+  "fields": {
+    "password": "qwer",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "maria@maria.com.br",
+    "name": "Maria",
+    "age": 18,
+    "photo": null,
+    "is_google_user": false,
+    "new_password": null,
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2020-04-28T01:00:06Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "user.user",
+  "pk": 3,
+  "fields": {
+    "password": "qwer",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "joao@joao.com.br",
+    "name": "Jo\u00e3o",
+    "age": 20,
+    "photo": null,
+    "is_google_user": false,
+    "new_password": null,
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2020-04-28T01:00:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "user.user",
+  "pk": 4,
+  "fields": {
+    "password": "qwer",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "renata@renata.com.br",
+    "name": "Renata",
+    "age": 30,
+    "photo": null,
+    "is_google_user": false,
+    "new_password": null,
+    "is_active": true,
+    "is_staff": false,
+    "date_joined": "2020-04-28T01:01:58Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
