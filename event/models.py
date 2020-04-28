@@ -1,22 +1,22 @@
 from django.db import models
 
-from daybook.models import DayBook
+from establishment.models import Establishment
 from user.models import User
 
 
 class Event(models.Model):
-    day_book = models.ForeignKey(to=DayBook, on_delete=models.DO_NOTHING)
-    user = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
+    establishment = models.ForeignKey(to=Establishment, on_delete=models.PROTECT)
+    client = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
     description = models.CharField(max_length=255, blank=True, null=True)
-    hour = models.TimeField(auto_now=True)
+    data = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'tb_event'
 
     def __str__(self):
-        return self.day_book.__str__() + ' | ' + self.description + ' | ' + self.user.name
+        return self.establishment.__str__() + ' | ' + self.description + ' | ' + self.client.name
 
     def save(self, *args, **kwargs):
-        if Event.objects.filter(day_book=self.day_book, hour=self.hour).exists():
+        if Event.objects.filter(establishment=self.establishment, data=self.data).exists():
             raise ValueError('There is already another event at this time.')
         return super(Event, self).save(*args, **kwargs)
