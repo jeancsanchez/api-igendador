@@ -15,7 +15,7 @@ class Event(models.Model):
     establishment = models.ForeignKey(to=Establishment, on_delete=models.PROTECT)
     client = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
     description = models.CharField(max_length=255, blank=True, null=True)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField()
     status = models.IntegerField(choices=Status.choices, default=Status.RESERVED)
 
     class Meta:
