@@ -12,7 +12,7 @@ class Status(models.IntegerChoices):
 
 
 class Event(models.Model):
-    establishment = models.ForeignKey(to=Establishment, on_delete=models.PROTECT)
+    establishment = models.ForeignKey(to=Establishment, related_name='events', on_delete=models.PROTECT)
     client = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
     description = models.CharField(max_length=255, blank=True, null=True)
     date = models.DateTimeField()
