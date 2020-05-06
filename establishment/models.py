@@ -17,15 +17,15 @@ class Establishment(models.Model):
 
 class Availability(models.Model):
     TYPES = (
-        (1, 'Every day'),
-        (2, 'Working days'),
-        (3, 'Weekends'),
+        (0, 'Every day'),
+        (1, 'Working days'),
+        (2, 'Weekends'),
     )
 
-    type = models.IntegerField(choices=TYPES, default=2)
+    type = models.IntegerField(choices=TYPES)
     hour_opened = models.TimeField()
     hour_closed = models.TimeField()
-    establishment = models.ForeignKey(to=Establishment, on_delete=models.DO_NOTHING)
+    establishment = models.ForeignKey(to=Establishment, related_name='availabilities', on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = 'tb_availability'
@@ -33,7 +33,8 @@ class Availability(models.Model):
 
 class Photo(models.Model):
     path = models.CharField(max_length=300, blank=False, unique=True)
-    establishment = models.ForeignKey(to=Establishment, null=True, blank=False, on_delete=models.DO_NOTHING)
+    establishment = models.ForeignKey(to=Establishment, related_name='photos', null=True, blank=False,
+                                      on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = 'tb_photo'
