@@ -2,7 +2,7 @@
 from rest_framework import viewsets
 
 from establishment.models import Establishment
-from establishment.serializers import EstablishmentSerializer, EstablishmentFullSerializer
+from establishment.serializers import EstablishmentSerializer, EstablishmentWithEventsSerializer
 
 
 class EstablishmentViewSet(viewsets.ModelViewSet):
@@ -11,5 +11,5 @@ class EstablishmentViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.action == 'retrieve':
-            return EstablishmentFullSerializer
+            return EstablishmentWithEventsSerializer
         return self.serializer_class

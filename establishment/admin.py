@@ -1,8 +1,19 @@
 from django.contrib import admin
+from django.contrib.admin import register
 
-# Register your models here.
-from establishment.models import Establishment, Availability, Photo
+from establishment.models import Establishment, Photo, Availability
 
-admin.site.register(Establishment)
-admin.site.register(Availability)
-admin.site.register(Photo)
+
+class PhotoInline(admin.StackedInline):
+    model = Photo
+
+
+class AvailabilityInline(admin.TabularInline):
+    model = Availability
+    extra = 2
+    verbose_name_plural = 'Aval'
+
+
+@register(Establishment)
+class EstablishmentAdmin(admin.ModelAdmin):
+    inlines = [AvailabilityInline, PhotoInline, ]

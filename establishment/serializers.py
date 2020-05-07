@@ -11,17 +11,19 @@ class AvailabilitySerializer(serializers.ModelSerializer):
 
 
 class EstablishmentSerializer(serializers.ModelSerializer):
+    photos = serializers.StringRelatedField(many=True)
     availability = AvailabilitySerializer(read_only=True)
 
     class Meta:
         model = Establishment
-        fields = ('id', 'title', 'subtitle', 'owner', 'availability',)
+        fields = ('id', 'title', 'subtitle', 'owner', 'availability', 'photos',)
 
 
-class EstablishmentFullSerializer(serializers.ModelSerializer):
+class EstablishmentWithEventsSerializer(serializers.ModelSerializer):
+    photos = serializers.StringRelatedField(many=True)
     availability = AvailabilitySerializer(read_only=True)
     events = EventSerializer(many=True, read_only=True)
 
     class Meta:
         model = Establishment
-        fields = ('id', 'title', 'subtitle', 'owner', 'availability', 'events',)
+        fields = ('id', 'title', 'subtitle', 'owner', 'availability', 'photos', 'events',)

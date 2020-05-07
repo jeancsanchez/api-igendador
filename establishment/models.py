@@ -38,3 +38,6 @@ class Photo(models.Model):
 
     class Meta:
         db_table = 'tb_photo'
+
+    def __str__(self):
+        return self.path
