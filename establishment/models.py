@@ -20,7 +20,7 @@ class Establishment(models.Model):
 
 class Photo(models.Model):
     path = models.CharField(max_length=355, null=False)
-    establishment = models.ForeignKey(to=Establishment, on_delete=models.CASCADE)
+    establishment = models.ForeignKey(to=Establishment, on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = 'tb_photo'
