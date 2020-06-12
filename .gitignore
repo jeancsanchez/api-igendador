@@ -1,0 +1,13 @@
+# Files
+.env
+configs.py
+*.py[cod]
+*.DS_Store
+db.sqlite3
+
+# Directories
+env/
+.idea/
+static/
+testing/tests/pics/
+pics/
