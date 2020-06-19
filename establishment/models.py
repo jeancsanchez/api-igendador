@@ -101,7 +101,7 @@ class CalendarMonth(models.Models):
         db_table = 'tb_calendarMonth'
 
 
-class holiday(models.Models):
+class Holiday(models.Models):
     day = models.DateField(null=False)
     name_holiday = models.CharField(max_length=255, null=False)
     CalendarMonth1 = models.ForeignKey(to=CalendarMonth, on_delete=models.CASCADE)
