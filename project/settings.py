@@ -38,6 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'establishment',
+    'user',
+    'photo',
+    'establishmentOwner',
+    'job',
+    'vacancy',
+    'schedulingService',
+    'weekDay',
+    'monthYear',
+    'calendarMonth',
+    'holiday',
+    'scheduling',
+
 ]
 
 MIDDLEWARE = [
