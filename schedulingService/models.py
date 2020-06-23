@@ -2,8 +2,9 @@ from django.db import models
 
 
 # Create your models here.
-from establishment.models import Scheduling
+
 from job.models import Job
+from scheduling.models import Scheduling
 
 
 class SchedulingService(models.Model):

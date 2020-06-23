@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class EstablishmentownerConfig(AppConfig):
+class Establishment_ownerConfig(AppConfig):
     name = 'establishmentOwner'
