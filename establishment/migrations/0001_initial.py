@@ -62,6 +62,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='establishment',
             name='owner',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='establishment.EstablishmentOwner'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='establishment.UserEstablishmentOwner'),
         ),
     ]

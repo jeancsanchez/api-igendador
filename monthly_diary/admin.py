@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import register
 
-from calendarMonth.models import CalendarMonth
+from monthly_diary.models import CalendarMonth
 
 
 @register(CalendarMonth)
