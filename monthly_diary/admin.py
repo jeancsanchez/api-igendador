@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.admin import register
 
-from monthly_diary.models import CalendarMonth
+from monthly_diary.models import MonthlyDiary
 
 
-@register(CalendarMonth)
-class CalendarMonthAdmin(admin.ModelAdmin):
+@register(MonthlyDiary)
+class MonthlyDiaryAdmin(admin.ModelAdmin):
     pass
