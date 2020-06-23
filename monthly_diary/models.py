@@ -34,7 +34,7 @@ class MonthlyDiary(models.Model):
     start_time = models.DateTimeField(null=True)
     end_time = models.DateTimeField(null=True)
     is_open = models.BooleanField(default=False)
-    vacancy = models.ForeignKey(to=Vacancy, on_delete=models.DO_NOTHING)
+    vacancy = models.ForeignKey(to=Vacancy, on_delete=models.CASCADE)
     month_year = models.IntegerField(choices=MONTHS, default=1)
     weekday = models.IntegerField(choices=WEEKDAYS, default=1)
     year = models.IntegerField(default=datetime.datetime.today().year)
@@ -47,7 +47,7 @@ class MonthlyDiary(models.Model):
 class Holiday(models.Model):
     day = models.DateField(null=False)
     name_holiday = models.CharField(max_length=255, null=False)
-    monthly_diary = models.ForeignKey(to=MonthlyDiary, on_delete=models.DO_NOTHING)
+    monthly_diary = models.ForeignKey(to=MonthlyDiary, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'tb_holiday'
