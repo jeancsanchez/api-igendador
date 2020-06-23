@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.admin import register
 
-from establishment.models import Establishment
+from scheduling.models import Scheduling
 
 
-@register(Establishment)
-class EstablishmentAdmin(admin.ModelAdmin):
+@register(Scheduling)
+class SchedulingAdmin(admin.ModelAdmin):
     pass
